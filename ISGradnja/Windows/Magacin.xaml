@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="ISGradnja.Windows.Magacin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ISGradnja.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        
+        <Grid Grid.Row="0">
+            
+
+                <TextBlock
+                        VerticalAlignment="Top"
+                        Foreground="Black"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                        Text="Dostupno" />
+            <Border BorderThickness="1" BorderBrush="#FF5C99D6">
+                <DataGrid x:Name="magacinDataGrid" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" CanUserSortColumns="True" Margin="0,35,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="RB" Binding="{Binding id}" />
+                        <DataGridTextColumn Header="Naziv stavke" Binding="{Binding naziv}" />
+                        <DataGridTextColumn Header="Merna jedinica" Binding="{Binding merna_jedinica}" />
+                        <DataGridTextColumn Header="Količina" Binding="{Binding kolicina}" />
+                        <DataGridTextColumn Header="Dostupno" Binding="{Binding dostupno}" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnDel" Click="btnDel_Click"  Height="30" Width="50" Foreground="White"  VerticalAlignment="Center" Content="{materialDesign:PackIcon Close}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnEdit" Click="btnEdit_Click"  Height="30" Width="50" Foreground="White"  VerticalAlignment="Center" Content="{materialDesign:PackIcon Edit}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnRaspodela" Click="btnRaspodela_Click"  Height="30" Width="50" Foreground="White"  VerticalAlignment="Center" Content="{materialDesign:PackIcon Send}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                        VerticalAlignment="Top"
+                        Foreground="Black"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                        Text="Raspodela" />
+            
+            <Border BorderThickness="1" BorderBrush="#FF5C99D6">
+                <DataGrid x:Name="magacinRaspodelaDataGrid" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="True" CanUserSortColumns="True" Margin="0,35,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="RB" Binding="{Binding id}" />
+                        <DataGridTextColumn Header="Naziv stavke" Binding="{Binding naziv}" />
+                        <DataGridTextColumn Header="Gradilište" Binding="{Binding gradiliste}" />
+                        <DataGridTextColumn Header="Količina" Binding="{Binding kolicina}" />
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnDelRaspodela" Click="btnDelRaspodela_Click"  Height="30" Width="50" Foreground="White"  VerticalAlignment="Center" Content="{materialDesign:PackIcon Close}"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+            <Button x:Name="btnAddMagacin" Click="btnAddMagacin_Click" Foreground="White" Grid.Row="1" Content="Dodaj" Height="40" Width="80" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,10,20,10"/>
+            <Button x:Name="btnOsvezi" Click="btnOsvezi_Click" Foreground="White" Grid.Row="1" Content="Osveži" Height="40" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,10,150,10"/>
+
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+﻿<Window x:Class="ISGradnja.Windows.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ISGradnja.Windows"
+        mc:Ignorable="d"
+        Title="Login" Height="550" Width="350"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Border BorderThickness="1" BorderBrush="#FF5C99D6">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Background="#FF2281D1">
+            <Button x:Name="btnClose" Click="btnClose_Click" HorizontalAlignment="Right" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White">
+                <materialDesign:PackIcon Kind="Close" />
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1" />
+                    <GradientStop Color="#FF34268A" Offset="1" />
+                    <GradientStop Color="#FF33288B" Offset="0.546" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Height="240" Width="280" VerticalAlignment="Bottom" Margin="0,80" RadiusX="10" RadiusY="10" Fill="White">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB" />
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <Grid VerticalAlignment="Bottom" Margin="35,80" Height="240">
+
+            <Label Content="Login" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18" />
+            <StackPanel VerticalAlignment="Center" Margin="15">
+                <TextBox x:Name="txtUsername" Margin="0,10" materialDesign:HintAssist.Hint="Korisničko ime" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="18" />
+                <PasswordBox x:Name="txtPassword" Margin="0,10" materialDesign:HintAssist.Hint="Lozinka" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontSize="18" />
+            </StackPanel>
+        </Grid>
+                <Button Foreground="White" x:Name="btnLogin" Click="btnLogin_Click" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="Uloguj se" ToolTip="Enter" />
+                <Image Source="/Res/LoginLogo.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30" />
+    </Grid>
+    </Grid>
+    </Border>
+</Window>

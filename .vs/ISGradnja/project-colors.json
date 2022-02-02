@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9baeb967-c6cd-4da1-a0f9-8b7583c3d2a4": {
+      "ProjectGuid": "9baeb967-c6cd-4da1-a0f9-8b7583c3d2a4",
+      "DisplayName": "ISGradnja",
+      "ColorIndex": 0
+    },
+    "d8604127-0fb4-4a3b-9f51-98ed4964c48e": {
+      "ProjectGuid": "d8604127-0fb4-4a3b-9f51-98ed4964c48e",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

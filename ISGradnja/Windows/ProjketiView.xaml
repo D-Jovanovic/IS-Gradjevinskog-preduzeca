@@ -1,0 +1,179 @@
+﻿<Window x:Class="ISGradnja.Windows.ProjketiView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ISGradnja.Windows"
+        mc:Ignorable="d"
+        Height="500" Width="600"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto" 
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Border BorderThickness="1" BorderBrush="#FF5C99D6">
+        <Grid>
+
+            <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6" MouseDown="Grid_MouseDown" >
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC" />
+                </Grid.Effect>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnClose" Click="btnClose_Click" HorizontalAlignment="Right" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White">
+                        <materialDesign:PackIcon Kind="Close" />
+                    </Button>
+                </StackPanel>
+                <TextBlock x:Name="naslov" Text="IS Gradjevina - Projekat" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Foreground="White" />
+            </Grid>
+
+            <Grid Height="440" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox
+                        x:Name="txtNaziv"
+                         IsReadOnly="True"
+                          Grid.Row="0"
+                          Grid.Column="0"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Naziv projekta"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtInvestitor"
+                         IsReadOnly="True"
+                          Grid.Row="0"
+                          Grid.Column="1"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Investitor"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtAdresa"
+                         IsReadOnly="True"
+                          Grid.Row="1"
+                          Grid.Column="0"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Adresa"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtTip"
+                         IsReadOnly="True"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Tip"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtSpratnost"
+                         IsReadOnly="True"
+                          Grid.Row="2"
+                          Grid.Column="0"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Spratnost"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtPocetak"
+                         IsReadOnly="True"
+                          Grid.Row="3"
+                          Grid.Column="0"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Početak"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+
+                <TextBox
+                        x:Name="txtRok"
+                         IsReadOnly="True"
+                          Grid.Row="3"
+                          Grid.Column="1"
+                          Margin="10"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Rok"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center"  />
+                <TextBlock
+                    HorizontalAlignment="Right"
+                    x:Name="txtDokumenta"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Text="Dokumenta: "
+                    VerticalAlignment="Center"
+                    FontSize="23"
+                    />
+
+                <Button
+                            Grid.Column="1"
+                            Grid.Row="5"
+                            x:Name="btnDoc1"
+                            Click="btnDoc1_Click"
+                            HorizontalAlignment="Left"
+                            Content="ime dokumenta"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="Blue"
+                              />
+                <Button
+                            Grid.Column="1"
+                            Grid.Row="6"
+                            x:Name="btnDoc2"
+                            Click="btnDoc2_Click"
+                            HorizontalAlignment="Left"
+                            Content="ime dokumenta"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="Blue"
+                            />
+                    <Button
+                            Grid.Column="1"
+                            Grid.Row="7"
+                            x:Name="btnDoc3"
+                            Click="btnDoc3_Click"
+                            HorizontalAlignment="Left"
+                            Content="ime dokumenta"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="Blue"
+                            />
+                    
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
+
+

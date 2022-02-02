@@ -1,0 +1,92 @@
+﻿<Window x:Class="ISGradnja.Windows.MagacinRaspodela"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ISGradnja.Windows"
+        mc:Ignorable="d"
+        Height="400" Width="600"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto" 
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Border BorderThickness="1" BorderBrush="#FF5C99D6">
+        <Grid>
+
+            <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6" MouseDown="Grid_MouseDown" >
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC" />
+                </Grid.Effect>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnClose" Click="btnClose_Click" HorizontalAlignment="Right" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White">
+                        <materialDesign:PackIcon Kind="Close" />
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="IS Gradjevina - Magacin raspodela" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Foreground="White" />
+            </Grid>
+
+            <Grid Height="340" VerticalAlignment="Bottom" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <ComboBox
+                        x:Name="cmbGradiliste"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          Margin="10,10.4,10.2,10.4"
+                          Background="AliceBlue"
+                          Height="36"
+                          materialDesign:HintAssist.Hint="Gradilište">
+                </ComboBox>
+                <TextBox
+                        x:Name="txtKolicina"
+                          Grid.Row="2"
+                          Grid.Column="1"
+                          Margin="10,0,10,0"
+                          Background="AliceBlue"
+                          materialDesign:HintAssist.Hint="Količina"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                          VerticalAlignment="Center" />
+                
+
+                <TextBlock
+                        x:Name="txtNaziv"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                        Text="Naziv stavke" />
+                <TextBlock
+                        x:Name="txtDostupno"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                      Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                      Text="Dostupno: " />
+
+                <Button Foreground="White" ToolTip="Enter" Grid.Column="1" Grid.Row="5" Content="Raspodeli" x:Name="btnRaspodela" Click="btnRaspodela_Click" Height="40" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
