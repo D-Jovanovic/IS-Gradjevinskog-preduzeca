@@ -1,4 +1,4 @@
-# IS-Gradjevinskog-preduzeca
+# Informacioni sistem građevinskog preduzeća
 
 U ovom radu se nalaze sve potrebne informacije za razumevanje informacionog sistema gradjevinskog preduzeća. U te informacije se ubrajaju potrebni dijagrami, opisi procesa, tokovi podataka kao i praktična realizacija. 
 
